@@ -1,0 +1,91 @@
+@primary-color: #005f73;
+@secondary-color: #0a9396;
+@text-color: #f7f7f7;
+@background-color: #f0f4f8;
+@card-bg-color: #94d2bd;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: @background-color;
+    color: @primary-color;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: @primary-color;
+    color: @text-color;
+
+    h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    max-width: 1200px; /* Limitar el ancho del contenedor */
+    margin: 0 auto;
+}
+
+.card {
+    background-color: @card-bg-color;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    h2 {
+        margin: 10px 0;
+        font-size: 1.5rem;
+        color: @primary-color;
+    }
+
+    p {
+        padding: 0 10px;
+        font-size: 1rem;
+        color: @primary-color;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: @primary-color;
+    color: @text-color;
+
+    p {
+        margin: 0;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* 1 tarjeta por fila en pantallas pequeñas */
+    }
+}
